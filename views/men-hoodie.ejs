@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style3.css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Men's Hoodie</title>
+    
+</head>
+<body>
+    <div class="header1">
+        
+        <div class="scheme"><span class="material-symbols-outlined">
+            credit_card
+            </span>SIGN UP & GET 15% OFF</div>
+        <div class="scheme"><span class="material-symbols-outlined">
+            local_shipping
+            </span>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div class="scheme"><span class="material-symbols-outlined">
+            currency_exchange
+            </span>FREE RETURNS</div>
+   </div>
+   <div class="header2">
+        <div class="indexlogo">
+              <img src="/images/indexlogo.jpg" width="70">
+        </div>
+        <div class="indexcategory">
+           <a href="http://localhost:3000/mencategory/mens"><p class="category"><b>MEN</b></p></a>  
+             <a><p class="category"><b>WOMEN</b></p></a>  
+             <a><p class="category"><b>KIDS</b></p></a>  
+             <a><p class="category">SPORTS</p></a>  
+             <a><p class="category">BRANDS</p></a>  
+             <a><p class="category">COLLECTION</p></a>  
+             <a><p class="category">OUTLETS</p></a>  
+        </div>
+        <div class="indexsearch">
+              <div class="info">
+                   <div class="infobutton">HELP</div>
+                   <div class="infobutton">RETURNS</div>
+                   <div class="infobutton">ORDER TRACKING</div>
+                   <div class="infobutton">SIGN UP</div>
+
+              </div>
+              <div class="search">
+                   <div class="searchbox">
+                            <input type="text" placeholder="search" class="searchindex">
+                   </div>
+                   <div class="utility"></div>
+              </div>
+        </div>
+
+   </div>
+      <div class="header" > 
+         <video loop height='100'autoplay muted><source src="/images/bannervid2.mp4"></video> 
+         <div class="headermain"><h1 style="font-family: 'Roboto', sans-serif;color: white;">Men's Hoodie</h1></div>
+    </div>
+    <div class="productdisplay">
+          
+    </div>
+    <script> 
+       $(document).ready(function(req,res,next){
+        var serverUrl="http://localhost:3000"
+                $.getJSON(`${serverUrl}/category/fetchhoodie`,function(data){
+
+                    data.result.map((item)=>{
+                        $('.productdisplay').append(`<div class="productcard">
+            
+               <div class="imagearea"><img src='/images/${item.picture}'</div>
+               <div class="productname">${item.productname}</div>
+               <div class="productprice"><span class="material-symbols-outlined">
+currency_rupee
+</span>${item.productprice}</div>
+
+          </div>`)
+                    })
+                     
+                })
+       })
+    
+    </script>
+
+</body>
+</html>

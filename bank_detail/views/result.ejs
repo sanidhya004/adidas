@@ -1,0 +1,59 @@
+<html>
+    <style>
+       body{
+        background-color: 
+         #274472;
+       }  
+       .container{
+            background-color: 
+        #41729F;
+        align-items: center;
+        margin-top: 100px;
+        width: 600px;
+        height: 300px;
+        border-radius: 50px;
+       }
+       table{
+          font-size: 200%;
+       }
+       
+      
+    </style>
+    <body onload="call()">
+        <center>
+        <div class="container">
+           <table>
+              <tr>
+                <td colspan="2"><small><b><%=designation %></b></small></td>
+              </tr>
+              <tr>
+                <td>Name:</td> 
+                <td><b><%=name%></b></td>
+              </tr>
+              <tr>
+                  <td>Salary:</td>
+                  <td><b><p id="salary" ><%=salary %></b></p></td>
+              </tr>
+              <tr>
+                <td>DA:</td>
+                <td><b><%=DA %></b></td>
+            </tr>
+            <tr>
+                <td>HRA:</td>
+                <td><b><%=HRA %></b></td>
+            </tr>
+            <tr>
+                <td>Net Salary:</td>
+                <td><b><%=total %></b></td>
+            </tr>
+           </table>
+        </div>
+       </center>
+       <script>
+          function call(){
+             alert('hye')
+             
+          }
+       </script>
+    </body>
+</html>
